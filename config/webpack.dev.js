@@ -6,6 +6,7 @@ module.exports = merge(commonConfig, {
   devtool: 'inline-source-map',
   devServer: {
     hot: true,
+    historyApiFallback: true,
   },
   module: {
     rules: [
@@ -29,14 +30,14 @@ module.exports = merge(commonConfig, {
           },
         ],
       },
-      // {  TODO - check if this will be necessary in the future
-      //   test: /\.css$/,
-      //   include: /node_modules/,
-      //   loader: [
-      //     'style-loader',
-      //     'css-loader',
-      //   ],
-      // },
+      {
+        test: /\.css$/,
+        include: /node_modules/,
+        loader: [
+          'style-loader',
+          'css-loader',
+        ],
+      },
     ],
   },
 });

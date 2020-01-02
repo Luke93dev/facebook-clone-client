@@ -7,11 +7,16 @@
       "error", {
          "devDependencies": true
       }
-    ]
+    ],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   },
   "settings": {
     "import/resolver": {
       "node": {}
     }
+  },
+  "env": {
+    "browser": true,
+    "node": true
   }
 }
