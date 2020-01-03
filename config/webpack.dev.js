@@ -7,6 +7,7 @@ module.exports = merge(commonConfig, {
   devServer: {
     hot: true,
     historyApiFallback: true,
+    quiet: true,
   },
   module: {
     rules: [
@@ -21,22 +22,18 @@ module.exports = merge(commonConfig, {
               modules: {
                 localIdentName: '[path][name]__[local]',
               },
-            }
+            },
           },
           {
             loader: 'sass-loader',
-            options: {
-            },
+            options: {},
           },
         ],
       },
       {
         test: /\.css$/,
         include: /node_modules/,
-        loader: [
-          'style-loader',
-          'css-loader',
-        ],
+        loader: ['style-loader', 'css-loader'],
       },
     ],
   },

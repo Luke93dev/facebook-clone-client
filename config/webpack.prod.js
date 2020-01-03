@@ -21,14 +21,14 @@ module.exports = merge(commonConfig, {
               modules: {
                 localIdentName: '[hash:base64]',
               },
-            }
+            },
           },
           {
             loader: 'sass-loader',
-          }
-        ]
+          },
+        ],
       },
-    ]
+    ],
   },
   plugins: [
     new MiniCssExtractPlugin({
