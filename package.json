@@ -2,6 +2,9 @@
   "name": "facebook-clone-application",
   "version": "1.0.0",
   "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "main": "index.js",
   "scripts": {
     "start": "concurrently -k \"npm run start:client\" \"npm run mock:server\"",
@@ -10,11 +13,17 @@
     "mock:server": "node mock-server/index",
     "lint": "eslint . --ext .js,.jsx",
     "lint:fix": "eslint --fix . --ext .js,.jsx",
-    "prettier": "prettier --write \"./src/**/*.+(js|jsx)\""
+    "prettier": "prettier --write \"./src/**/*.+(js|jsx|scss)\""
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": ["prettier --write", "eslint", "git add"],
+    "src/**/*.scss": ["prettier --write", "git add"]
+  },
   "devDependencies": {
     "@babel/core": "^7.6.2",
     "@babel/preset-env": "^7.6.2",
@@ -35,7 +44,9 @@
     "eslint-plugin-react-hooks": "^1.7.0",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^3.1.0",
     "json-server": "^0.15.1",
+    "lint-staged": "^9.5.0",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.12.0",
     "prettier": "^1.19.1",
