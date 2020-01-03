@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Navigation from './components/Navigation/Navigation.jsx';
+import Navigation from './components/Navigation/Navigation';
 
-function AppLayout(props) {
+function AppLayout({ children }) {
   /*
       "editor.codeActionsOnSave": {
         "source.fixAll": true
@@ -12,7 +12,7 @@ function AppLayout(props) {
   return (
     <div>
       <Navigation />
-      <div>{props.children}</div>
+      <div>{children}</div>
     </div>
   );
 }

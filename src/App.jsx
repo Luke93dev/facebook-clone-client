@@ -5,12 +5,9 @@ import { ConnectedRouter } from 'connected-react-router';
 import { Route, Switch } from 'react-router';
 // import routes from './routes'
 
-import AppLayout from './modules/Core/components/AppLayout/AppLayout.jsx';
+import AppLayout from './modules/Core/components/AppLayout/AppLayout';
 
 const App = ({ history }) => {
-  console.log(history);
-  console.log('render');
-  const test = 3;
   return (
     <ConnectedRouter history={history}>
       <AppLayout>
@@ -25,6 +22,10 @@ const App = ({ history }) => {
 
 App.propTypes = {
   history: PropTypes.object,
+};
+
+App.defaultProps = {
+  history: {},
 };
 
 export default hot(App);
