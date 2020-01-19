@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from '@hot-loader/react-dom';
 import { Provider } from 'react-redux';
+import configureStore, { history } from 'modules/Core/store/rootStore';
 import App from './App';
-import configureStore, { history } from './modules/Store';
 
 import 'normalize.css';
 

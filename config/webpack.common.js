@@ -1,3 +1,4 @@
+const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -40,6 +41,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
+      modules: path.resolve(__dirname, '../src/modules'),
       'react-dom': '@hot-loader/react-dom',
     },
   },

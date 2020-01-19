@@ -5,14 +5,15 @@ import { ConnectedRouter } from 'connected-react-router';
 import { Route, Switch } from 'react-router';
 // import routes from './routes'
 
-import AppLayout from './modules/Core/components/AppLayout/AppLayout';
+import AppLayout from 'modules/Core/components/AppLayout/AppLayout';
+import MainView from 'modules/Views/MainView/MainView';
 
 const App = ({ history }) => {
   return (
     <ConnectedRouter history={history}>
       <AppLayout>
         <Switch>
-          <Route exact path="/" render={() => <div>Match</div>} />
+          <Route exact path="/" render={() => <MainView />} />
           <Route exact path="/test" render={() => <div>Missss</div>} />
         </Switch>
       </AppLayout>
