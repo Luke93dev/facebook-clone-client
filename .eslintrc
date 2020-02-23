@@ -7,14 +7,20 @@
       "error", {
          "devDependencies": true
       }
-    ],
+    ],    
+    "no-underscore-dangle": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/forbid-prop-types": [2, { "forbid": ["any", "array"] }],
-    "max-len": ["error", { "code": 120 }]
+    "max-len": ["error", { "code": 120 }],
+    "class-methods-use-this": "off",
+    "no-use-before-define": "off",
   },
   "settings": {
     "import/resolver": {
-      "node": {}
+      "node": {},
+      "webpack": {
+        "config": "config/webpack.common.js"
+      }
     }
   },
   "env": {

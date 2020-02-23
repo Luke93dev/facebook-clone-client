@@ -3,16 +3,30 @@ import TYPES from './types';
 
 const INITIAL_STATE = {
   authorized: false,
+  loading: false,
 };
 
 const authReducer = (state = INITIAL_STATE, action) => {
-  console.log(action);
   switch (action.type) {
     case TYPES.LOGIN: {
-      console.log('1');
       return {
         ...state,
         authorized: true,
+      };
+    }
+
+    case TYPES.LOGIN_START: {
+      return {
+        ...state,
+        loading: true,
+      };
+    }
+
+    case TYPES.LOGIN_SUCCESS: {
+      return {
+        ...state,
+        authorized: true,
+        loading: false,
       };
     }
 

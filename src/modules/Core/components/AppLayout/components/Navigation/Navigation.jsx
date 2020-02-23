@@ -5,17 +5,21 @@ import styles from './Navigation.scss';
 
 function Navigation() {
   const authorized = useSelector((state) => state.auth.authorized);
+  const loading = useSelector((state) => state.auth.loading);
   const dispatch = useDispatch();
 
   return (
     <div className={styles.NavigationWrapper}>
-      <button type="button" onClick={() => dispatch(authOperations.loginUser())}>
-        Login
-      </button>
-      <button type="button" onClick={() => dispatch(authOperations.logoutUser())}>
-        Logout
-      </button>
-      {authorized ? 'Logged In' : 'Not Authorized'}
+      {authorized ? (
+        <button type="button" onClick={() => dispatch(authOperations.logoutUser())}>
+          Logout
+        </button>
+      ) : (
+        <button type="button" onClick={() => dispatch(authOperations.loginUser())}>
+          Login
+        </button>
+      )}
+      {loading && 'Loading...'}
     </div>
   );
 }

@@ -4,7 +4,7 @@ import Home from './Home/Home';
 import NotAuthorized from './NotAuthorized/NotAuthorized';
 
 function MainView() {
-  const authorized = useSelector((state) => state.auth.loggedIn);
+  const authorized = useSelector((state) => state.auth.authorized);
 
   return authorized ? <Home /> : <NotAuthorized />;
 }

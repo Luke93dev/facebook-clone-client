@@ -1,7 +1,11 @@
 const LOGIN = 'LOGIN';
 const LOGOUT = 'LOGOUT';
+const LOGIN_START = 'LOGIN_START';
+const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 
 export default {
   LOGIN,
   LOGOUT,
+  LOGIN_START,
+  LOGIN_SUCCESS,
 };

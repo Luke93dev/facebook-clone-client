@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Navigation from './components/Navigation/Navigation';
+import styles from './AppLayout.scss';
 
 function AppLayout({ children }) {
   /*
@@ -12,7 +13,7 @@ function AppLayout({ children }) {
   return (
     <div>
       <Navigation />
-      <div>{children}</div>
+      <div className={styles.ContentWrapper}>{children}</div>
     </div>
   );
 }
